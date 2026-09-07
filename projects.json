@@ -1,0 +1,29 @@
+[
+  {
+    "id": "qr-med",
+    "title": "Private & Secure Medical Data Transmission",
+    "summary": "Secure QR-based patient data transmission and automated check-in.",
+    "tech": ["HTML", "CSS", "JavaScript", "Java", "MySQL"],
+    "details": "Developed a secure system for medical data transmission using QR codes to ensure privacy and automate patient check-ins. It encrypts sensitive health records and allows seamless access through QR code scanning.",
+    "link": "https://github.com/pradnyeshlembhe/Private_-_Secure_medical_Data_Transmission_Using_QRCode",
+    "image": "images/qr_medical_app.jpg"
+  },
+  {
+    "id": "quiz-app",
+    "title": "Online Quiz System",
+    "summary": "Android application to create, save, and practice MCQs.",
+    "tech": ["Android Studio", "Java", "XML"],
+    "details": "Built an Android app that allows users to create custom multiple-choice quizzes, save them locally using SQLite, and practice for exams with an intuitive mobile interface.",
+    "link": "https://github.com/pradnyeshlembhe/ChatBot_By_Pradnyesh",
+    "image": "images/quiz_android_app.jpg"
+  },
+  {
+    "id": "portfolio",
+    "title": "Portfolio Website",
+    "summary": "Responsive personal portfolio site.",
+    "tech": ["HTML", "CSS", "JavaScript", "AI"],
+    "details": "Designed and developed a responsive personal portfolio website showcasing projects, skills, and experience with modern design principles and semantic HTML.",
+    "link": "#",
+    "image": "images/my_portfolio.png"
+  }
+]

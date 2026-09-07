@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Pradnyesh Lembhe</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0f172a',
+                            dark: '#020617',
+                            light: '#1e293b'
+                        },
+                        teal: {
+                            DEFAULT: '#06b6d4',
+                            light: '#22d3ee'
+                        },
+                        warm: {
+                            DEFAULT: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy-dark text-slate-300 antialiased selection:bg-teal selection:text-navy-dark min-h-screen flex flex-col relative">
+
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 z-[-1] opacity-15 bg-[url('images/coding_bg.jpg')] bg-cover bg-center bg-no-repeat pointer-events-none mix-blend-screen"></div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-navy-light shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="font-heading font-bold text-2xl tracking-tighter text-white flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-teal rounded">
+                        <span class="w-10 h-10 bg-gradient-to-br from-teal to-warm rounded-lg flex items-center justify-center text-navy-dark shadow-lg">PL</span>
+                    </a>
+                </div>
+                <nav>
+                    <a href="index.html" class="text-sm font-medium bg-navy-light border border-gray-700 text-gray-300 hover:text-teal hover:border-teal hover:bg-navy-dark transition-all focus:outline-none focus:ring-2 focus:ring-teal rounded-md px-4 py-2 shadow-sm inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Back to Home
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 flex-grow relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-12 border-b border-navy-light pb-8 fade-in">
+                <h1 class="font-heading text-4xl sm:text-5xl font-bold text-white mb-4">All Projects</h1>
+                <p class="text-lg text-gray-400">A detailed look at my technical projects, applications, and code.</p>
+            </div>
+
+            <div class="space-y-12">
+                
+                <!-- Project 1 -->
+                <article class="bg-navy rounded-xl border border-navy-light overflow-hidden shadow-lg fade-in p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/3">
+                            <div class="h-48 md:h-full bg-navy-light rounded-lg flex items-center justify-center border border-gray-800 overflow-hidden">
+                                <img src="images/qr_medical_app.jpg" alt="Medical Data Transmission Dashboard" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <h2 class="text-2xl font-bold font-heading text-white mb-3">Private & Secure Medical Data Transmission</h2>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
+                                Developed a secure web application to transmit patient data using QR codes. Improved hospital efficiency by automating patient check-in and digital record access.
+                            </p>
+                            
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Technologies</h3>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">HTML</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">CSS</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">JavaScript</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">Java</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">MySQL</span>
+                            </div>
+
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">Role</h3>
+                            <p class="text-gray-300 text-sm mb-6">Requirement Analysis, System Design, Documentation</p>
+                            
+                            <a href="https://github.com/pradnyeshlembhe/Private_-_Secure_medical_Data_Transmission_Using_QRCode" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 border border-teal text-sm font-medium rounded-md text-teal hover:bg-teal hover:text-navy-dark transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal focus:ring-offset-navy-dark w-fit">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="bg-navy rounded-xl border border-navy-light overflow-hidden shadow-lg fade-in p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/3">
+                            <div class="h-48 md:h-full bg-navy-light rounded-lg flex items-center justify-center border border-gray-800 overflow-hidden">
+                                <img src="images/quiz_android_app.jpg" alt="Online Quiz Android App" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <h2 class="text-2xl font-bold font-heading text-white mb-3">Online Quiz System (Android App)</h2>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
+                                Built a mobile application for quiz management and preparation using Android Studio. Enabled users to efficiently create, save, and practice multiple-choice questions.
+                            </p>
+                            
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Technologies</h3>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">Android Studio</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">Java</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">XML</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">SQLite</span>
+                            </div>
+
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">Role</h3>
+                            <p class="text-gray-300 text-sm mb-6">System Design, Testing, Documentation</p>
+
+                            <a href="https://github.com/pradnyeshlembhe/ChatBot_By_Pradnyesh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 border border-teal text-sm font-medium rounded-md text-teal hover:bg-teal hover:text-navy-dark transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal focus:ring-offset-navy-dark w-fit">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="bg-navy rounded-xl border border-navy-light overflow-hidden shadow-lg fade-in p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/3">
+                            <div class="h-48 md:h-full bg-navy-light rounded-lg flex items-center justify-center border border-gray-800 overflow-hidden">
+                                <img src="images/my_portfolio.png" alt="Portfolio Website Mockup" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <h2 class="text-2xl font-bold font-heading text-white mb-3">Portfolio Website</h2>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
+                                Created a responsive personal website using HTML, CSS, JavaScript and AI to showcase technical projects, experience, and GitHub links. Features smooth animations, dynamic content loading, and a mobile-first design.
+                            </p>
+                            
+                            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Technologies</h3>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">HTML</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">CSS / AI</span>
+                                <span class="px-2.5 py-1 text-xs bg-navy-light text-teal rounded border border-gray-800">JavaScript</span>
+                            </div>
+
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 border border-teal text-sm font-medium rounded-md text-teal hover:bg-teal hover:text-navy-dark transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal focus:ring-offset-navy-dark w-fit">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy py-8 border-t border-navy-light text-center text-sm text-gray-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; 2026 Pradnyesh Lembhe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

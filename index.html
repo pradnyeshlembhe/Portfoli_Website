@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradnyesh Lembhe | Computer Engineer & Developer</title>
+    <meta name="description" content="Portfolio of Pradnyesh Lembhe, a Computer Engineer and Support-Focused Developer based in Mumbai.">
+    <meta property="og:title" content="Pradnyesh Lembhe | Portfolio">
+    <meta property="og:description" content="Building secure web apps and solving technical problems with a user-first approach.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Pradnyesh+Lembhe+-+Portfolio">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0f172a', /* slightly lighter navy for better contrast */
+                            dark: '#020617',
+                            light: '#1e293b'
+                        },
+                        teal: {
+                            DEFAULT: '#06b6d4',
+                            light: '#22d3ee'
+                        },
+                        warm: {
+                            DEFAULT: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy-dark text-slate-300 antialiased selection:bg-teal selection:text-navy-dark">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-navy-light shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-heading font-bold text-2xl tracking-tighter text-white flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-teal rounded">
+                        <span class="w-10 h-10 bg-gradient-to-br from-teal to-warm rounded-lg flex items-center justify-center text-navy-dark shadow-lg">PL</span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-3">
+                        <li><a href="#about" class="text-sm font-medium bg-navy-light border border-gray-700 text-gray-300 hover:text-teal hover:border-teal hover:bg-navy-dark transition-all focus:outline-none focus:ring-2 focus:ring-teal rounded-md px-4 py-2 shadow-sm inline-block">About</a></li>
+                        <li><a href="#projects" class="text-sm font-medium bg-navy-light border border-gray-700 text-gray-300 hover:text-teal hover:border-teal hover:bg-navy-dark transition-all focus:outline-none focus:ring-2 focus:ring-teal rounded-md px-4 py-2 shadow-sm inline-block">Projects</a></li>
+                        <li><a href="#experience" class="text-sm font-medium bg-navy-light border border-gray-700 text-gray-300 hover:text-teal hover:border-teal hover:bg-navy-dark transition-all focus:outline-none focus:ring-2 focus:ring-teal rounded-md px-4 py-2 shadow-sm inline-block">Experience</a></li>
+                        <li><a href="#skills" class="text-sm font-medium bg-navy-light border border-gray-700 text-gray-300 hover:text-teal hover:border-teal hover:bg-navy-dark transition-all focus:outline-none focus:ring-2 focus:ring-teal rounded-md px-4 py-2 shadow-sm inline-block">Skills</a></li>
+                        <li><a href="#contact" class="text-sm font-medium bg-teal/10 border border-teal/30 text-teal hover:bg-teal hover:text-navy-dark transition-all focus:outline-none focus:ring-2 focus:ring-teal rounded-md px-4 py-2 shadow-sm inline-block">Contact</a></li>
+                    </ul>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal rounded p-2" aria-label="Toggle menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-b border-navy-light">
+            <ul class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+                <li><a href="#about" class="block px-4 py-2.5 bg-navy border border-gray-700 rounded-md text-base font-medium text-gray-300 hover:border-teal hover:text-teal hover:bg-navy-dark transition-all shadow-sm">About</a></li>
+                <li><a href="#projects" class="block px-4 py-2.5 bg-navy border border-gray-700 rounded-md text-base font-medium text-gray-300 hover:border-teal hover:text-teal hover:bg-navy-dark transition-all shadow-sm">Projects</a></li>
+                <li><a href="#experience" class="block px-4 py-2.5 bg-navy border border-gray-700 rounded-md text-base font-medium text-gray-300 hover:border-teal hover:text-teal hover:bg-navy-dark transition-all shadow-sm">Experience</a></li>
+                <li><a href="#skills" class="block px-4 py-2.5 bg-navy border border-gray-700 rounded-md text-base font-medium text-gray-300 hover:border-teal hover:text-teal hover:bg-navy-dark transition-all shadow-sm">Skills</a></li>
+                <li><a href="#contact" class="block px-4 py-2.5 bg-teal/10 border border-teal/30 rounded-md text-base font-medium text-teal hover:bg-teal hover:text-navy-dark transition-all shadow-sm">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[90vh] flex items-center relative overflow-hidden">
+            <!-- Decorative background elements -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-teal/10 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-warm/5 rounded-full blur-3xl -z-10"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 flex flex-col-reverse lg:flex-row items-center gap-12">
+                <div class="flex-1 text-center lg:text-left fade-in">
+                    <p class="text-teal font-medium mb-4 tracking-wide uppercase text-sm">Welcome to my portfolio</p>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                        Hi, I’m Pradnyesh<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal to-teal-light text-3xl sm:text-4xl lg:text-5xl">Computer Engineer & Support-Focused Developer</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-400 mb-6 max-w-2xl mx-auto lg:mx-0">
+                        Building secure web apps and solving technical problems with a user-first approach.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="resume.pdf" download="Pradnyesh_Lembhe_Resume.pdf" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-navy-dark bg-teal hover:bg-teal-light transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal focus:ring-offset-navy-dark shadow-lg shadow-teal/20">
+                            Download Resume
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-1 flex justify-center lg:justify-end fade-in">
+                    <!-- Stylized illustration placeholder -->
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-teal/20 to-warm/20 rounded-full animate-pulse border border-navy-light"></div>
+                        <div class="absolute inset-4 bg-navy rounded-full shadow-2xl flex items-center justify-center border border-navy-light overflow-hidden">
+                            <svg class="w-32 h-32 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-navy">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-8 flex items-center gap-4">
+                    <span class="w-8 h-1 bg-teal rounded"></span>
+                    About Me
+                </h2>
+                <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+                    <p>
+                        I hold a B.Tech in Computer Engineering along with a diploma in Computer Engineering. My educational background provided a strong foundation in software development principles, system architecture, and modern programming practices.
+                    </p>
+                    <p>
+                        My core strengths lie in customer-facing troubleshooting, application monitoring, and secure web development. I thrive in environments where I can bridge the gap between technical complexity and user needs, ensuring applications run smoothly and securely while delivering an excellent user experience.
+                    </p>
+                </div>
+                
+                <!-- Quick Facts -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-navy-light p-6 rounded-xl border border-gray-800 flex items-start gap-4">
+                        <div class="bg-teal/10 p-3 rounded-lg text-teal">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium">Location</h4>
+                            <p class="text-sm text-gray-400">Mumbai, India</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy-light p-6 rounded-xl border border-gray-800 flex items-start gap-4">
+                        <div class="bg-teal/10 p-3 rounded-lg text-teal">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium">Education</h4>
+                            <p class="text-sm text-gray-400">Savitribai Phule Pune University</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy-light p-6 rounded-xl border border-gray-800 flex items-start gap-4">
+                        <div class="bg-teal/10 p-3 rounded-lg text-teal">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium">Availability</h4>
+                            <p class="text-sm text-gray-400">Junior Dev / Support roles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-navy-dark">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-4">
+                    <span class="w-8 h-1 bg-teal rounded"></span>
+                    Featured Projects
+                </h2>
+                
+                <!-- Project Grid (populated via JS) -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cards will be injected here -->
+                    <div class="col-span-full flex justify-center py-12">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-teal"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-navy">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-4">
+                    <span class="w-8 h-1 bg-teal rounded"></span>
+                    Experience
+                </h2>
+                
+                <div class="relative border-l-2 border-navy-light ml-3 space-y-12">
+                    
+                    <!-- Role 1 (Most Recent) -->
+                    <div class="relative pl-8">
+                        <div class="absolute w-4 h-4 bg-teal rounded-full -left-[9px] top-1 border-4 border-navy"></div>
+                        <div class="bg-navy-light p-6 rounded-xl border border-gray-800 hover:border-gray-600 transition-colors">
+                            <span class="text-sm font-semibold text-teal tracking-wide uppercase">Jul 2026 – Aug 2026</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Backup Engineer / Desktop Support</h3>
+                            <h4 class="text-gray-400 font-medium mb-4">Tech Mahindra (via Genex)</h4>
+                            <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                                <li>Delivered comprehensive application and desktop support for enterprise environments.</li>
+                                <li>Troubleshooted network connectivity issues and hardware/software anomalies.</li>
+                                <li>Managed Avaya telephony systems and provided swift resolution for end-user IT requests.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Role 2 (Previous) -->
+                    <div class="relative pl-8">
+                        <div class="absolute w-4 h-4 bg-gray-600 rounded-full -left-[9px] top-1 border-4 border-navy"></div>
+                        <div class="bg-navy-light p-6 rounded-xl border border-gray-800 hover:border-gray-600 transition-colors">
+                            <span class="text-sm font-semibold text-gray-400 tracking-wide uppercase">Nov 2025 – Jul 2026</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Trainee-Associate</h3>
+                            <h4 class="text-gray-400 font-medium mb-4">Tech Mahindra</h4>
+                            <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                                <li>Provided robust customer support for glucose meters and related medical devices.</li>
+                                <li>Monitored devices and analyzed application logs to preemptively identify issues.</li>
+                                <li>Handled incident management, ensuring timely resolution and escalation of critical software bugs.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-navy-dark">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-4">
+                    <span class="w-8 h-1 bg-teal rounded"></span>
+                    Skills & Tools
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Category 1 -->
+                    <div class="bg-navy p-6 rounded-xl border border-navy-light">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Languages
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">Python</span>
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">JavaScript / React</span>
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">Java</span>
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">HTML / CSS</span>
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">SQL (MySQL)</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="bg-navy p-6 rounded-xl border border-navy-light">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Tools & Tech
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">GitHub</span>
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">VS Code</span>
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">Android Studio</span>
+                            <span class="px-3 py-1.5 bg-navy-light text-gray-300 rounded-md text-sm border border-gray-800">Avaya</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="bg-navy p-6 rounded-xl border border-navy-light">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                            Certifications
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <span class="text-warm mt-1">▹</span>
+                                Networking Technologies
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <span class="text-warm mt-1">▹</span>
+                                HTML/CSS Basics
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-navy pt-20 pb-10 border-t border-navy-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="font-heading text-3xl font-bold text-white mb-6">Let's Connect</h2>
+                    <p class="text-gray-400 mb-8 max-w-md">
+                        Whether you have a question, a project opportunity, or just want to say hi, my inbox is always open.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="mailto:pradnyeshlembhe08@email.com" class="flex items-center gap-4 text-gray-300 hover:text-teal transition-colors">
+                            <div class="bg-navy-light p-3 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                            pradnyeshlembhe08@email.com
+                        </a>
+                        <a href="tel:+917038438806" class="flex items-center gap-4 text-gray-300 hover:text-teal transition-colors">
+                            <div class="bg-navy-light p-3 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+                            +91 7038438806
+                        </a>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="bg-navy-light p-3 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+                            Mumbai, Maharashtra, India
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex md:justify-end items-start">
+                    <div class="flex gap-4">
+                        <a href="https://github.com/pradnyeshlembhe" target="_blank" rel="noopener noreferrer" class="bg-navy-light p-4 rounded-xl text-gray-400 hover:text-white hover:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-teal" aria-label="GitHub">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/pradnyesh-lembhe-1b9026238" target="_blank" rel="noopener noreferrer" class="bg-navy-light p-4 rounded-xl text-gray-400 hover:text-blue-500 hover:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-teal" aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-navy-light text-sm text-gray-500">
+                <p>&copy; 2026 Pradnyesh Lembhe. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Designed & Built with <span class="text-teal">AI</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal Dialog -->
+    <dialog id="project-modal" class="bg-navy rounded-xl shadow-2xl p-0 max-w-2xl w-full mx-auto backdrop:bg-black/80 border border-navy-light">
+        <div class="p-6 sm:p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h3 id="modal-title" class="text-2xl font-bold font-heading text-white">Project Title</h3>
+                <button id="close-modal" class="text-gray-400 hover:text-white focus:outline-none p-1" aria-label="Close modal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <div class="prose prose-invert max-w-none">
+                <p id="modal-description" class="text-gray-300 leading-relaxed mb-8">
+                    Project description goes here...
+                </p>
+                
+                <div class="mb-8">
+                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Technologies Used</h4>
+                    <div id="modal-tech" class="flex flex-wrap gap-2">
+                        <!-- Tech tags injected here -->
+                    </div>
+                </div>
+                
+                <div class="pt-6 border-t border-navy-light">
+                    <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 border border-teal text-sm font-medium rounded-md text-teal hover:bg-teal hover:text-navy-dark transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal focus:ring-offset-navy-dark w-fit">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
