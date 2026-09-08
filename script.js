@@ -95,22 +95,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('modal-link').href = project.link;
     
     const liveLink = document.getElementById('modal-live-link');
-    if (project.live_link) {
-      liveLink.href = project.live_link;
-      liveLink.classList.remove('hidden');
-      liveLink.classList.add('inline-flex');
-    } else {
-      liveLink.classList.add('hidden');
-      liveLink.classList.remove('inline-flex');
+    if (liveLink) {
+      if (project.live_link) {
+        liveLink.href = project.live_link;
+        liveLink.classList.remove('hidden');
+        liveLink.classList.add('inline-flex');
+      } else {
+        liveLink.classList.add('hidden');
+        liveLink.classList.remove('inline-flex');
+      }
     }
 
     projectModal.showModal();
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
   };
 
   closeModalBtn.addEventListener('click', () => {
     projectModal.close();
     document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
   });
 
   projectModal.addEventListener('click', (e) => {
@@ -123,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ) {
       projectModal.close();
       document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
     }
   });
 });

@@ -79,3 +79,14 @@ body.cursor-click .cursor-outline {
   transform: translate(-50%, -50%) scale(0.8);
   background-color: rgba(100, 255, 218, 0.3);
 }
+
+/* Restore cursor when modal is open (since custom cursor sits behind the dialog top layer) */
+body.modal-open, 
+body.modal-open * {
+  cursor: auto !important;
+}
+
+body.modal-open .cursor-dot, 
+body.modal-open .cursor-outline {
+  display: none !important;
+}
