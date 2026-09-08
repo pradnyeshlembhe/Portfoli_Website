@@ -126,3 +126,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// --- Custom Cursor Logic ---
+const cursorDot = document.getElementById('cursor-dot');
+const cursorOutline = document.getElementById('cursor-outline');
+
+if (cursorDot && cursorOutline) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let outlineX = 0;
+  let outlineY = 0;
+
+  // Track mouse movement
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // The inner dot instantly follows the cursor
+    cursorDot.style.left = `${mouseX}px`;
+    cursorDot.style.top = `${mouseY}px`;
+  });
+
+  // Smooth trailing animation for the outline ring
+  function animateCursor() {
+    let ease = 0.15;
+    outlineX += (mouseX - outlineX) * ease;
+    outlineY += (mouseY - outlineY) * ease;
+    
+    cursorOutline.style.left = `${outlineX}px`;
+    cursorOutline.style.top = `${outlineY}px`;
+    
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Add click animation (mousedown/mouseup)
+  window.addEventListener('mousedown', () => {
+    document.body.classList.add('cursor-click');
+  });
+  
+  window.addEventListener('mouseup', () => {
+    document.body.classList.remove('cursor-click');
+  });
+
+  // Function to attach hover listeners to interactable elements
+  function attachCursorHover() {
+    const interactables = document.querySelectorAll('a, button, input, textarea, select');
+    interactables.forEach(el => {
+      // Remove previous listener if it exists to avoid duplicates
+      el.removeEventListener('mouseenter', handleMouseEnter);
+      el.removeEventListener('mouseleave', handleMouseLeave);
+      
+      el.addEventListener('mouseenter', handleMouseEnter);
+      el.addEventListener('mouseleave', handleMouseLeave);
+    });
+  }
+
+  function handleMouseEnter() {
+    document.body.classList.add('cursor-hover');
+  }
+  
+  function handleMouseLeave() {
+    document.body.classList.remove('cursor-hover');
+  }
+
+  // Initial attach
+  attachCursorHover();
+
+  // Re-attach after dynamic content loads (e.g. projects from JSON)
+  const observer = new MutationObserver((mutations) => {
+    attachCursorHover();
+  });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
+}

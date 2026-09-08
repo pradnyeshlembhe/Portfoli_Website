@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Animation Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a192f; /* Navy background to match portfolio */
+            color: #ccd6f6;
+            font-family: system-ui, -apple-system, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: none; /* Hide default cursor */
+            overflow: hidden;
+        }
+
+        /* The main dot */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #64ffda; /* Teal accent */
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* Let clicks pass through */
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s;
+        }
+
+        /* The trailing circle */
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(100, 255, 218, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9998;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        /* Expand effect when hovering over links */
+        .cursor-hover .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(100, 255, 218, 0.1);
+            border-color: #64ffda;
+        }
+
+        .cursor-hover .cursor-dot {
+            width: 0; /* hide the center dot on hover */
+            height: 0;
+        }
+
+        /* Sample content */
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        h1 { margin-top: 0; color: #e6f1ff; }
+        
+        button, a {
+            cursor: none; /* keep hidden over links too */
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 24px;
+            color: #64ffda;
+            border: 1px solid #64ffda;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        button:hover, a:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <div class="container">
+        <h1>Cursor Animation Preview</h1>
+        <p>Move your mouse around to see the trailing teal cursor.</p>
+        <p>Try hovering over the button below to see the magnetic hover effect!</p>
+        <a href="#" class="hover-target">Hover Me!</a>
+    </div>
+
+    <script>
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        
+        let mouseX = 0;
+        let mouseY = 0;
+        let outlineX = 0;
+        let outlineY = 0;
+
+        // Track mouse movement
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // The inner dot instantly follows the cursor
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+        });
+
+        // Add a smooth trailing animation for the outline ring
+        function animate() {
+            // Easing factor (0.1 means 10% of the distance per frame)
+            let ease = 0.15;
+            
+            outlineX += (mouseX - outlineX) * ease;
+            outlineY += (mouseY - outlineY) * ease;
+            
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+            
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Add hover effects to any element with the 'hover-target' class
+        // (In a real site, we'd query all 'a' and 'button' tags)
+        const hoverTargets = document.querySelectorAll('.hover-target');
+        
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-hover');
+            });
+        });
+    </script>
+</body>
+</html>

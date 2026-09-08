@@ -27,3 +27,55 @@ dialog::backdrop {
   background: rgba(15, 23, 36, 0.8);
   backdrop-filter: blur(4px);
 }
+
+/* Custom Cursor */
+@media (pointer: fine) {
+  body, a, button, input, textarea {
+    cursor: none;
+  }
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #64ffda;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(100, 255, 218, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+/* Hover state on links */
+body.cursor-hover .cursor-outline {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(100, 255, 218, 0.1);
+  border-color: #64ffda;
+}
+body.cursor-hover .cursor-dot {
+  opacity: 0;
+}
+
+/* Click animation state */
+body.cursor-click .cursor-outline {
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: rgba(100, 255, 218, 0.3);
+}
