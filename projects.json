@@ -33,7 +33,7 @@
     "tech": ["HTML", "CSS", "JavaScript", "Antigravity AI"],
     "details": "Career Nexus is a modern job portal built with Antigravity AI, connecting job seekers and recruiters through smart matching, real-time alerts, and an intuitive dashboard. Designed for speed, scalability, and secure data handling, it streamlines hiring from discovery to offer.\n\nKey Features:\n• Smart Search: Skill, location, experience, salary filters.\n• Profiles & Resumes: Rich candidate profiles with resume upload and versioning.\n• Employer Dashboard: Job posting, applicant tracking, analytics.\n• Real-Time Notifications: Application updates, interview scheduling, messages.\n• Security & Scalability: Built on Antigravity’s performant architecture.",
     "link": "https://github.com/pradnyeshlembhe/Career_Nexus_Job_Portal",
-    "live_link": "https://github.com/pradnyeshlembhe/Career_Nexus_Job_Portal",
+    "live_link": "https://career-nexus-job-portal.vercel.app/",
     "image": "images/job_portal_app.jpg"
   },
   {
