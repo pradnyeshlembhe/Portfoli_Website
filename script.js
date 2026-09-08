@@ -110,14 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
     projectModal.showModal();
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
+    
+    // Move custom cursor into the modal so it appears in the top layer
+    const cursorD = document.getElementById('cursor-dot');
+    const cursorO = document.getElementById('cursor-outline');
+    if (cursorD && cursorO) {
+      projectModal.appendChild(cursorD);
+      projectModal.appendChild(cursorO);
+    }
   };
 
+  function closeProjectModal() {
+    projectModal.close();
+    document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
+    
+    // Move custom cursor back to the body
+    const cursorD = document.getElementById('cursor-dot');
+    const cursorO = document.getElementById('cursor-outline');
+    if (cursorD && cursorO) {
+      document.body.appendChild(cursorD);
+      document.body.appendChild(cursorO);
+    }
+  }
+
   if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', () => {
-      projectModal.close();
-      document.body.style.overflow = '';
-      document.body.classList.remove('modal-open');
-    });
+    closeModalBtn.addEventListener('click', closeProjectModal);
   }
 
   if (projectModal) {
@@ -129,9 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.clientY < dialogDimensions.top ||
         e.clientY > dialogDimensions.bottom
       ) {
-        projectModal.close();
-        document.body.style.overflow = '';
-        document.body.classList.remove('modal-open');
+        closeProjectModal();
       }
     });
   }

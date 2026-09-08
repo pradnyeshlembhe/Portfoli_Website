@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor in Modal Preview</title>
+  <style>
+    body {
+      background-color: #0a192f;
+      color: white;
+      font-family: sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: none;
+    }
+    button, a {
+      cursor: none;
+    }
+    
+    /* Cursor Styles */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #64ffda;
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .cursor-outline {
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(100, 255, 218, 0.5);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9998;
+      transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, transform 0.1s;
+    }
+    body.cursor-hover .cursor-outline {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(100, 255, 218, 0.1);
+      border-color: #64ffda;
+    }
+    body.cursor-hover .cursor-dot {
+      opacity: 0;
+    }
+    
+    /* Modal Styles */
+    dialog {
+      background: #112240;
+      border: 1px solid #233554;
+      border-radius: 12px;
+      color: white;
+      padding: 2rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    dialog::backdrop {
+      background: rgba(10, 25, 47, 0.8);
+      backdrop-filter: blur(4px);
+      cursor: none;
+    }
+    
+    .btn {
+      background: transparent;
+      border: 1px solid #64ffda;
+      color: #64ffda;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+    .btn:hover {
+      background: rgba(100, 255, 218, 0.1);
+    }
+  </style>
+</head>
+<body>
+  
+  <button class="btn hover-target" id="open-btn">View Details</button>
+  
+  <dialog id="project-modal">
+    <h2>Project Modal</h2>
+    <p>This is inside the modal. Try hovering over the close button.</p>
+    <button class="btn hover-target" id="close-btn">Close Modal</button>
+  </dialog>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
+  <script>
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorOutline = document.getElementById('cursor-outline');
+    let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+    });
+
+    function animateCursor() {
+      let ease = 0.15;
+      outlineX += (mouseX - outlineX) * ease;
+      outlineY += (mouseY - outlineY) * ease;
+      cursorOutline.style.left = `${outlineX}px`;
+      cursorOutline.style.top = `${outlineY}px`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    const hoverTargets = document.querySelectorAll('.hover-target');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    const modal = document.getElementById('project-modal');
+    document.getElementById('open-btn').addEventListener('click', () => {
+      modal.showModal();
+      // Move cursor inside modal so it appears in the top layer!
+      modal.appendChild(cursorDot);
+      modal.appendChild(cursorOutline);
+    });
+
+    document.getElementById('close-btn').addEventListener('click', () => {
+      modal.close();
+      // Move cursor back to body
+      document.body.appendChild(cursorDot);
+      document.body.appendChild(cursorOutline);
+    });
+  </script>
+</body>
+</html>
