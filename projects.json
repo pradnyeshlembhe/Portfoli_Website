@@ -25,5 +25,14 @@
     "details": "Designed and developed a responsive personal portfolio website showcasing projects, skills, and experience with modern design principles and semantic HTML.",
     "link": "https://github.com/pradnyeshlembhe/Portfoli_Website",
     "image": "images/my_portfolio.png"
+  },
+  {
+    "id": "career-nexus",
+    "title": "Career Nexus Job Portal",
+    "summary": "Modern job portal built with Antigravity AI, connecting job seekers and recruiters.",
+    "tech": ["HTML", "CSS", "JavaScript", "Antigravity AI"],
+    "details": "Career Nexus is a modern job portal built with Antigravity AI, connecting job seekers and recruiters through smart matching, real-time alerts, and an intuitive dashboard. Designed for speed, scalability, and secure data handling, it streamlines hiring from discovery to offer.\n\nKey Features:\n• Smart Search: Skill, location, experience, salary filters.\n• Profiles & Resumes: Rich candidate profiles with resume upload and versioning.\n• Employer Dashboard: Job posting, applicant tracking, analytics.\n• Real-Time Notifications: Application updates, interview scheduling, messages.\n• Security & Scalability: Built on Antigravity’s performant architecture.",
+    "link": "#",
+    "image": "images/job_portal_app.jpg"
   }
 ]
