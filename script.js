@@ -138,6 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalBtn.addEventListener('click', closeProjectModal);
   }
 
+  const modalBackBtn = document.getElementById('modal-back-btn');
+  if (modalBackBtn) {
+    modalBackBtn.addEventListener('click', closeProjectModal);
+  }
+
   if (projectModal) {
     projectModal.addEventListener('click', (e) => {
       const dialogDimensions = projectModal.getBoundingClientRect();
