@@ -93,6 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('modal-tech').innerHTML = tagsHtml;
     
     document.getElementById('modal-link').href = project.link;
+    
+    const liveLink = document.getElementById('modal-live-link');
+    if (project.live_link) {
+      liveLink.href = project.live_link;
+      liveLink.classList.remove('hidden');
+      liveLink.classList.add('inline-flex');
+    } else {
+      liveLink.classList.add('hidden');
+      liveLink.classList.remove('inline-flex');
+    }
 
     projectModal.showModal();
     document.body.style.overflow = 'hidden';

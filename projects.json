@@ -14,7 +14,7 @@
     "summary": "Android application to create, save, and practice MCQs.",
     "tech": ["Android Studio", "Java", "XML"],
     "details": "Built an Android app that allows users to create custom multiple-choice quizzes, save them locally using SQLite, and practice for exams with an intuitive mobile interface.",
-    "link": "https://github.com/pradnyeshlembhe/ChatBot_By_Pradnyesh",
+    "link": "#",
     "image": "images/quiz_android_app.jpg"
   },
   {
@@ -34,5 +34,15 @@
     "details": "Career Nexus is a modern job portal built with Antigravity AI, connecting job seekers and recruiters through smart matching, real-time alerts, and an intuitive dashboard. Designed for speed, scalability, and secure data handling, it streamlines hiring from discovery to offer.\n\nKey Features:\n• Smart Search: Skill, location, experience, salary filters.\n• Profiles & Resumes: Rich candidate profiles with resume upload and versioning.\n• Employer Dashboard: Job posting, applicant tracking, analytics.\n• Real-Time Notifications: Application updates, interview scheduling, messages.\n• Security & Scalability: Built on Antigravity’s performant architecture.",
     "link": "https://github.com/pradnyeshlembhe/Career_Nexus_Job_Portal",
     "image": "images/job_portal_app.jpg"
+  },
+  {
+    "id": "pp-chat-bot",
+    "title": "P&P Chat Bot",
+    "summary": "Real-time web chatbot built with Flask and Google Gemini AI.",
+    "tech": ["Python", "Flask", "Gemini AI", "HTML/CSS"],
+    "details": "A real-time web chatbot built with Python Flask, HTML/CSS, and Google Gemini. It features instant FAQ matching for predefined intents (like math, space, programming, etc.) and falls back to Gemini 2.5 Flash for dynamic, open-ended questions. Features a futuristic sci-fi interactive UI.",
+    "link": "https://github.com/pradnyeshlembhe/ChatBot_By_Pradnyesh",
+    "live_link": "https://chat-bot-by-pradnyesh.vercel.app/",
+    "image": "images/chatbot_app.jpg"
   }
 ]
