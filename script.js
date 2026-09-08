@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Error fetching projects:', error));
 
   function renderProjects(projects) {
+    if (!projectsGrid) return;
     projectsGrid.innerHTML = '';
     projects.forEach(project => {
       const tagsHtml = project.tech.map(tech => 
@@ -111,25 +112,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('modal-open');
   };
 
-  closeModalBtn.addEventListener('click', () => {
-    projectModal.close();
-    document.body.style.overflow = '';
-    document.body.classList.remove('modal-open');
-  });
-
-  projectModal.addEventListener('click', (e) => {
-    const dialogDimensions = projectModal.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
       projectModal.close();
       document.body.style.overflow = '';
       document.body.classList.remove('modal-open');
-    }
-  });
+    });
+  }
+
+  if (projectModal) {
+    projectModal.addEventListener('click', (e) => {
+      const dialogDimensions = projectModal.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        projectModal.close();
+        document.body.style.overflow = '';
+        document.body.classList.remove('modal-open');
+      }
+    });
+  }
 });
 
 // --- Custom Cursor Logic ---
